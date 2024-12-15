@@ -61,13 +61,13 @@ export default function SayloFeedback({ apiKey }) {
     }, []);
     // Set up event listener for "custom-button"
     useEffect(() => {
-        if (customization?.widge_type === "custom-button") {
+        if (customization?.widget_type === "custom-button") {
             document.addEventListener("click", handleTriggerClick);
             return () => {
                 document.removeEventListener("click", handleTriggerClick);
             };
         }
-    }, [customization?.widge_type, handleTriggerClick]);
+    }, [customization?.widget_type, handleTriggerClick]);
     // Handle file input changes
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files?.[0] || null);
@@ -146,7 +146,7 @@ export default function SayloFeedback({ apiKey }) {
     };
     if (!customization)
         return;
-    return (_jsxs("div", { "data-mode": themeClass, className: classes.base, children: [customization.widge_type === "floating-button" && _jsx("button", { ref: openPopoverRef, onClick: () => setShowWidgetPanel(true), "aria-label": "open widget", type: "button", style: {
+    return (_jsxs("div", { "data-mode": themeClass, className: classes.base, children: [customization.widget_type === "floating-button" && _jsx("button", { ref: openPopoverRef, onClick: () => setShowWidgetPanel(true), "aria-label": "open widget", type: "button", style: {
                     backgroundColor: customization.button_color,
                 }, className: `${classes.actionButton} ${buttonPositionClass}`, children: customization.floating_icon === "default" ? (_jsx("svg", { xmlns: "http://www.w3.org/2000/svg", className: classes.actionButtonSvg, fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: _jsx("path", { "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2", d: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" }) })) : (_jsx("img", { src: customization.floating_icon_upload || "", alt: "Custom logo", width: 32, height: 32, className: classes.actionCustomImage })) }), _jsxs("div", { ref: widgetRef, className: `${classes.container} ${buttonPositionClass} ${shapeClass} ${showWidgetPanel ? classes.showFlex : classes.hide}`, children: [_jsxs("div", { className: `${classes.navigation} ${widgetState === "form"
                             ? `${classes.navBetween}`

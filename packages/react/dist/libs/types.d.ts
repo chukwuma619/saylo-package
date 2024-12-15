@@ -8,7 +8,7 @@ export type WidgetType = {
     saylo_visible: boolean;
     shape: string;
     theme: string;
-    widge_type: string;
+    widget_type: string;
     widget_color: string;
 };
 //# sourceMappingURL=types.d.ts.map
